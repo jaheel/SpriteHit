@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloorAutoMoveX : MonoBehaviour
 {
-    private Transform transform;
     public float MoveSpeed;//移动速度
     private bool MoveDirection = true;//true代表右移，false代表左移
     public float MoveRadius;//移动半径
@@ -13,7 +12,6 @@ public class FloorAutoMoveX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform =GetComponent<Transform>();
         x = transform.position.x;
         Move_X = x;
     }

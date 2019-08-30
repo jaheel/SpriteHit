@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FloorAutoMoveY : MonoBehaviour
 {
-    private Transform transform;
     public float MoveSpeed;//移动速度
     private bool MoveDirection = true;//true代表上移，false代表下移
     public float MoveRadius;//移动半径
@@ -13,7 +12,6 @@ public class FloorAutoMoveY : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
         y = transform.position.y;
         Move_Y = y;
     }
