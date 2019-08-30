@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public     float      MoveAccelerate        =     0.5f; //水平移动加速度
     private    int        HorizontalDirection   =        1;//水平方向，1代表向右，-1代表向左
     private    float      JumpSpeed             =      10f;//跳跃的垂直速度
-    private    float      MaxBlood              =     100f;//最高血量
+    public     float      MaxBlood              =     100f;//最高血量
     private    float      CurrentBlood          =     100f;//当前血量
     
 

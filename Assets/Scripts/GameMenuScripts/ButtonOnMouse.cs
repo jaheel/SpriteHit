@@ -8,14 +8,13 @@ using UnityEngine.EventSystems;
 public class ButtonOnMouse : MonoBehaviour
 {
     private Text text;
-    private EventTrigger ET;
+    private List<EventTrigger.Entry> _triggers = new List<EventTrigger.Entry>();
     // Start is called before the first frame update
     void Start()
     {
-        text = this.GetComponent<Text>();
-        ET = gameObject.GetComponent<EventTrigger>();
+        text = GetComponent<Text>();
         //实例化委托列表
-        ET.triggers = new List<EventTrigger.Entry>();
+        _triggers = GetComponentInParent<EventTrigger>().triggers;
         //注册事件
         EventTrigger.Entry entryPointerEnter = new EventTrigger.Entry();
         EventTrigger.Entry entryPointerExit = new EventTrigger.Entry();
@@ -32,8 +31,8 @@ public class ButtonOnMouse : MonoBehaviour
         entryPointerEnter.callback.AddListener(pointerEnterCB);
         entryPointerExit.callback.AddListener(pointerExitCB);
         //添加到委托列表
-        ET.triggers.Add(entryPointerEnter);
-        ET.triggers.Add(entryPointerExit);
+        _triggers.Add(entryPointerEnter);
+        _triggers.Add(entryPointerExit);
     }
 
     // Update is called once per frame
